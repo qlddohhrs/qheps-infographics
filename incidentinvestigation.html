@@ -1,0 +1,1135 @@
+<script
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+  crossorigin="anonymous"
+></script>
+<style>
+  .st0 {
+    display: none;
+  }
+  .st1 {
+    display: inline;
+  }
+  .st2 {
+    opacity: 8.4e-2;
+    fill: #27aae1;
+    enable-background: new;
+  }
+  .st3 {
+    display: inline;
+    fill: none;
+    stroke: #85c446;
+    stroke-width: 2;
+    stroke-dasharray: 2, 2;
+  }
+  .st4 {
+    fill: #ffffff;
+    stroke: #85c446;
+    stroke-width: 2;
+  }
+  .st5 {
+    fill: #193957;
+  }
+  .st6 {
+    font-family: 'Arial';
+  }
+  .st7 {
+    font-size: 30px;
+  }
+  .st8 {
+    fill: #85c446;
+  }
+  .st9 {
+    fill: #a3d572;
+  }
+  .st11 {
+    font-family: 'Arial';
+    font-weight: bold;
+  }
+  .st12 {
+    font-size: 22.4472px;
+  }
+  .st13 {
+    display: inline;
+    fill: none;
+    stroke: #85c446;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .st14 {
+    display: inline;
+    fill: none;
+    stroke: #85c446;
+    stroke-width: 2.0011;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 4.0022;
+  }
+  .st15 {
+    display: inline;
+    fill: none;
+    stroke: #85c446;
+    stroke-width: 1.9997;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 3.9993;
+  }
+  .st16 {
+    fill: none;
+    stroke: #85c446;
+    stroke-width: 2;
+    stroke-dasharray: 2, 2;
+  }
+  .st17 {
+    fill: none;
+    stroke: #85c446;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .st18 {
+    fill: none;
+    stroke: #85c446;
+    stroke-width: 2.0011;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 4.0022;
+  }
+  .st19 {
+    fill: none;
+    stroke: #85c446;
+    stroke-width: 1.9997;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 3.9993;
+  }
+  .st20 {
+    font-family: 'Arial';
+    fill: #ffffff;
+  }
+  .st21 {
+    font-family: 'Arial';
+  }
+
+  .pill {
+    fill: #85c446;
+  }
+
+  .hexfill {
+    fill: #ffffff;
+  }
+  .swoosh {
+    fill: #ffffff;
+  }
+
+  #step1,
+  #step2,
+  #step3,
+  #step4,
+  #step5,
+  #step6,
+  #step7 {
+    cursor: pointer;
+  }
+
+  .active-step1 #step1 .swoosh,
+  .active-step2 #step2 .swoosh,
+  .active-step3 #step3 .swoosh,
+  .active-step4 #step4 .swoosh,
+  .active-step5 #step5 .swoosh,
+  .active-step6 #step6 .swoosh,
+  .active-step7 #step7 .swoosh {
+    fill: #a3d572;
+  }
+
+  .active-step1 #step1 .pill,
+  .active-step2 #step2 .pill,
+  .active-step3 #step3 .pill,
+  .active-step4 #step4 .pill,
+  .active-step5 #step5 .pill,
+  .active-step6 #step6 .pill,
+  .active-step7 #step7 .pill {
+    fill: #a3d572;
+  }
+
+  .active-step1 #step1 .hexfill,
+  .active-step2 #step2 .hexfill,
+  .active-step3 #step3 .hexfill,
+  .active-step4 #step4 .hexfill,
+  .active-step5 #step5 .hexfill,
+  .active-step6 #step6 .hexfill,
+  .active-step7 #step7 .hexfill {
+    fill: #85c446;
+  }
+
+  .active-step1 #step1 .titletext.st10,
+  .active-step2 #step2 .titletext.st10,
+  .active-step3 #step3 .titletext.st10,
+  .active-step4 #step4 .titletext.st10,
+  .active-step5 #step5 .titletext.st10,
+  .active-step6 #step6 .titletext.st10,
+  .active-step7 #step7 .titletext.st10 {
+    fill: #ffffff;
+  }
+
+  /**
+  * Update to sizing and spacing
+  * START
+  */
+  #investigateincident-infographic {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .investigateincident-container {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+  }
+
+  .investigateincident-container svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  /**
+  * END
+*/
+</style>
+
+<script>
+  window.onload = function() {
+    if (window.jQuery) {
+      (function($) {
+        var infographic = $('#investigateincident-infographic');
+
+        $('#step1').click(function() {
+          $(infographic).removeClass();
+          $(infographic).addClass('active activated active-step1');
+          // todo: uncomment and add correct url here
+          // document.location.href = "insert url here";
+        });
+
+        $('#step1').mouseover(function() {
+          if (!$(infographic).hasClass('activated')) {
+            $(infographic).removeClass();
+            $(infographic).addClass('active active-step1');
+          }
+        });
+
+        $('#step1').mouseout(function() {
+          if (!$(infographic).hasClass('activated')) {
+            $(infographic).removeClass();
+          }
+        });
+
+        $('#step2').click(function() {
+          $(infographic).removeClass();
+          $(infographic).addClass('active activated active-step2');
+          // todo: uncomment and add correct url here
+          // document.location.href = "insert url here";
+        });
+
+        $('#step2').mouseover(function() {
+          if (!$(infographic).hasClass('activated')) {
+            $(infographic).removeClass();
+            $(infographic).addClass('active active-step2');
+          }
+        });
+
+        $('#step2').mouseout(function() {
+          if (!$(infographic).hasClass('activated')) {
+            $(infographic).removeClass();
+          }
+        });
+
+        $('#step3').click(function() {
+          $(infographic).removeClass();
+          $(infographic).addClass('active activated active-step3');
+          // todo: uncomment and add correct url here
+          // document.location.href = "insert url here";
+        });
+
+        $('#step3').mouseover(function() {
+          if (!$(infographic).hasClass('activated')) {
+            $(infographic).removeClass();
+            $(infographic).addClass('active active-step3');
+          }
+        });
+
+        $('#step3').mouseout(function() {
+          if (!$(infographic).hasClass('activated')) {
+            $(infographic).removeClass();
+          }
+        });
+
+        $('#step4').click(function() {
+          $(infographic).removeClass();
+          $(infographic).addClass('active activated active-step4');
+          // todo: uncomment and add correct url here
+          // document.location.href = "insert url here";
+        });
+
+        $('#step4').mouseover(function() {
+          if (!$(infographic).hasClass('activated')) {
+            $(infographic).removeClass();
+            $(infographic).addClass('active active-step4');
+          }
+        });
+
+        $('#step4').mouseout(function() {
+          if (!$(infographic).hasClass('activated')) {
+            $(infographic).removeClass();
+          }
+        });
+
+        $('#step5').click(function() {
+          $(infographic).removeClass();
+          $(infographic).addClass('active activated active-step5');
+          // todo: uncomment and add correct url here
+          // document.location.href = "insert url here";
+        });
+
+        $('#step5').mouseover(function() {
+          if (!$(infographic).hasClass('activated')) {
+            $(infographic).removeClass();
+            $(infographic).addClass('active active-step5');
+          }
+        });
+
+        $('#step5').mouseout(function() {
+          if (!$(infographic).hasClass('activated')) {
+            $(infographic).removeClass();
+          }
+        });
+
+        $('#step6').click(function() {
+          $(infographic).removeClass();
+          $(infographic).addClass('active activated active-step6');
+          // todo: uncomment and add correct url here
+          // document.location.href = "insert url here";
+        });
+
+        $('#step6').mouseover(function() {
+          if (!$(infographic).hasClass('activated')) {
+            $(infographic).removeClass();
+            $(infographic).addClass('active active-step6');
+          }
+        });
+
+        $('#step6').mouseout(function() {
+          if (!$(infographic).hasClass('activated')) {
+            $(infographic).removeClass();
+          }
+        });
+
+        $('#step7').click(function() {
+          $(infographic).removeClass();
+          $(infographic).addClass('active activated active-step7');
+          // todo: uncomment and add correct url here
+          // document.location.href = "insert url here";
+        });
+
+        $('#step7').mouseover(function() {
+          if (!$(infographic).hasClass('activated')) {
+            $(infographic).removeClass();
+            $(infographic).addClass('active active-step7');
+          }
+        });
+
+        $('#step7').mouseout(function() {
+          if (!$(infographic).hasClass('activated')) {
+            $(infographic).removeClass();
+          }
+        });
+      })(jQuery);
+    } else {
+    }
+  };
+</script>
+
+<div id="investigateincident-infographic">
+  <div class="investigateincident-container">
+    <svg
+      version="1.1"
+      id="Layer_1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      x="0px"
+      y="0px"
+      viewBox="0 0 972 946"
+      style="enable-background:new 0 0 972 946;"
+      xml:space="preserve"
+    >
+      <g id="Layer_1" class="st0">
+        <g id="Group_167" class="st1">
+          <ellipse
+            id="Ellipse_27"
+            class="st2"
+            cx="483.4"
+            cy="463"
+            rx="372.8"
+            ry="372"
+          />
+        </g>
+        <path
+          id="Path_17161"
+          class="st3"
+          d="M220.9,326.7c0-92.4,177.6-146.1,266.7-146.1S756,240,756,337.9s-85.4,135.9-268.4,135.9
+        S225,523.3,220.9,592.7s173.7,152.5,266.7,152.5S756,682.3,756,603.5"
+        />
+        <g id="Group_164" transform="translate(0 10)" class="st1">
+          <path
+            id="Path_17414"
+            class="st4"
+            d="M532.2,52.1h-91.5c-12.5,0-24.1,6.7-30.3,17.5l-45.8,79.2c-6.3,10.8-6.3,24.2,0,35l45.8,79.2
+          c6.3,10.8,17.8,17.5,30.3,17.5h91.5c12.5,0,24.1-6.7,30.3-17.5l45.8-79.2c6.3-10.8,6.3-24.2,0-35l-45.8-79.2
+          C556.2,58.8,544.7,52.1,532.2,52.1z"
+          />
+          <text
+            transform="matrix(1 0 0 1 437.1115 172.3963)"
+            class="st5 st6 st7 "
+          >
+            Plan the
+          </text>
+          <text
+            transform="matrix(1 0 0 1 403.8576 207.6707)"
+            class="st5 st6 st7"
+          >
+            investigation
+          </text>
+          <g id="Group_161" transform="translate(0.5 -170.5)">
+            <path
+              id="Rectangle_129"
+              class="st8"
+              d="M440.4,256.3h89.8c9.7,0,17.6,7.9,17.6,17.6l0,0c0,9.7-7.9,17.6-17.6,17.6h-89.8
+            c-9.7,0-17.6-7.9-17.6-17.6l0,0C422.7,264.2,430.6,256.3,440.4,256.3z"
+            />
+            <path
+              id="Path_17412"
+              class="st9"
+              d="M547.8,273.9c0,9.7-7.9,17.6-17.6,17.6c0,0-90,0.2-89.8,0
+            C529.1,287.2,532.6,290.6,547.8,273.9z"
+            />
+          </g>
+          <text
+            transform="matrix(1 0 0 1 454.3273 110.659)"
+            class="st10 st11 st12"
+          >
+            Step 2
+          </text>
+        </g>
+        <g id="Group_165" transform="translate(8 10)" class="st1">
+          <g id="Group_140" transform="translate(-4 19.5)">
+            <path
+              id="Path_17163"
+              class="st4"
+              d="M234.7,185h-91.5c-12.5,0-24.1,6.7-30.3,17.5l-45.8,79.2c-6.3,10.8-6.3,24.2,0,35l45.8,79.2
+            c6.3,10.8,17.8,17.5,30.3,17.5h91.5c12.5,0,24.1-6.7,30.3-17.5l45.8-79.2c6.3-10.8,6.3-24.2,0-35L265,202.5
+            C258.7,191.6,247.2,185,234.7,185z"
+            />
+            <path
+              id="Rectangle_126"
+              class="st8"
+              d="M143.5,220.2h89.8c9.7,0,17.6,7.9,17.6,17.6l0,0c0,9.7-7.9,17.6-17.6,17.6h-89.8
+            c-9.7,0-17.6-7.9-17.6-17.6l0,0C125.8,228.1,133.7,220.2,143.5,220.2z"
+            />
+            <text
+              transform="matrix(1 0 0 1 158.4025 245.0818)"
+              class="st10 st11 st12"
+            >
+              Step 1
+            </text>
+            <text
+              transform="matrix(1 0 0 1 119.2251 310.928)"
+              class="st5 st6 st7"
+            >
+              Immediate
+            </text>
+            <text
+              transform="matrix(1 0 0 1 142.1538 345.7025)"
+              class="st5 st6 st7"
+            >
+              actions
+            </text>
+            <path
+              id="Path_17415"
+              class="st9"
+              d="M250.9,237.9c0,9.7-7.9,17.6-17.6,17.6c0,0-90,0.2-89.8,0
+            C232.2,251.1,235.7,254.6,250.9,237.9z"
+            />
+          </g>
+        </g>
+        <g id="Group_137" transform="translate(0.5 26.5)" class="st1">
+          <path
+            id="Path_17175"
+            class="st4"
+            d="M530.9,332.3h-91.5c-12.5,0-24.1,6.7-30.3,17.5L363.3,429c-6.3,10.8-6.3,24.2,0,35l45.8,79.2
+          c6.3,10.8,17.8,17.5,30.3,17.5h91.5c12.5,0,24.1-6.7,30.3-17.5l45.8-79.2c6.3-10.8,6.3-24.2,0-35l-45.8-79.2
+          C554.9,338.9,543.4,332.3,530.9,332.3z"
+          />
+          <text
+            transform="matrix(1 0 0 1 403.4929 457.7269)"
+            class="st5 st6 st7"
+          >
+            Organise the
+          </text>
+          <text
+            transform="matrix(1 0 0 1 411.7819 493.0013)"
+            class="st5 st6 st7"
+          >
+            information
+          </text>
+          <g id="Group_159">
+            <path
+              id="Rectangle_129-2"
+              class="st8"
+              d="M440.4,369.1h89.8c9.7,0,17.6,7.9,17.6,17.6l0,0c0,9.7-7.9,17.6-17.6,17.6h-89.8
+            c-9.7,0-17.6-7.9-17.6-17.6l0,0C422.7,377,430.6,369.1,440.4,369.1z"
+            />
+            <path
+              id="Path_17412-2"
+              class="st9"
+              d="M547.8,386.8c0,9.7-7.9,17.6-17.6,17.6c0,0-90,0.2-89.8,0
+            C529.1,400,532.6,403.5,547.8,386.8z"
+            />
+          </g>
+          <text
+            transform="matrix(1 0 0 1 454.4846 392.3865)"
+            class="st10 st11 st12"
+          >
+            Step 4
+          </text>
+        </g>
+        <g id="Group_139" transform="translate(4 15.5)" class="st1">
+          <path
+            id="Path_17177"
+            class="st4"
+            d="M234.7,495.6h-91.5c-12.5,0-24.1,6.7-30.3,17.5l-45.8,79.2c-6.3,10.8-6.3,24.2,0,35
+          l45.8,79.2c6.3,10.8,17.8,17.5,30.3,17.5h91.5c12.5,0,24.1-6.7,30.3-17.5l45.8-79.2c6.3-10.8,6.3-24.2,0-35L265,513.1
+          C258.8,502.2,247.2,495.6,234.7,495.6z"
+          />
+          <text
+            transform="matrix(1 0 0 1 112.3051 620.6507)"
+            class="st5 st6 st7"
+          >
+            Analyse the
+          </text>
+          <text
+            transform="matrix(1 0 0 1 112.6577 655.9261)"
+            class="st5 st6 st7"
+          >
+            information
+          </text>
+          <path
+            id="Rectangle_130"
+            class="st8"
+            d="M143.5,532.5h89.8c9.7,0,17.6,7.9,17.6,17.6l0,0c0,9.7-7.9,17.6-17.6,17.6h-89.8
+          c-9.7,0-17.6-7.9-17.6-17.6l0,0C125.8,540.4,133.7,532.5,143.5,532.5z"
+          />
+          <text
+            transform="matrix(1 0 0 1 157.426 557.3099)"
+            class="st10 st11 st12"
+          >
+            Step 5
+          </text>
+          <path
+            id="Path_17416"
+            class="st9"
+            d="M250.9,550.1c0,9.7-7.9,17.6-17.6,17.6c0,0-90,0.2-89.8,0
+          C232.2,563.3,235.7,566.8,250.9,550.1z"
+          />
+        </g>
+        <g id="Group_138" transform="translate(0.5 24.5)" class="st1">
+          <path
+            id="Path_17178"
+            class="st4"
+            d="M531.7,630.9h-91.5c-12.5,0-24.1,6.7-30.3,17.5l-45.8,79.2c-6.3,10.8-6.3,24.2,0,35
+          l45.8,79.2c6.3,10.8,17.8,17.5,30.3,17.5h91.5c12.5,0,24.1-6.7,30.3-17.5l45.8-79.2c6.3-10.8,6.3-24.2,0-35L562,648.4
+          C555.7,637.6,544.2,630.9,531.7,630.9z"
+          />
+          <text
+            transform="matrix(1 0 0 1 407.0319 764.765)"
+            class="st5 st6 st7"
+          >
+            Recommend
+          </text>
+          <text
+            transform="matrix(1 0 0 1 427.0261 800.0384)"
+            class="st5 st6 st7"
+          >
+            solutions
+          </text>
+          <path
+            id="Rectangle_131"
+            class="st8"
+            d="M440.4,671h89.8c9.7,0,17.6,7.9,17.6,17.6l0,0c0,9.7-7.9,17.6-17.6,17.6h-89.8
+          c-9.7,0-17.6-7.9-17.6-17.6l0,0C422.7,678.9,430.6,671,440.4,671z"
+          />
+          <text
+            transform="matrix(1 0 0 1 455.217 695.8196)"
+            class="st10 st11 st12"
+          >
+            Step 6
+          </text>
+          <path
+            id="Path_17417"
+            class="st9"
+            d="M547.8,688.6c0,9.7-7.9,17.6-17.6,17.6c0,0-90,0.2-89.8,0
+          C529.1,701.8,532.6,705.3,547.8,688.6z"
+          />
+        </g>
+        <g id="Group_162" transform="translate(-6.5 10)" class="st1">
+          <path
+            id="Path_17174"
+            class="st4"
+            d="M831.3,203.7h-91.5c-12.5,0-24.1,6.7-30.3,17.5l-45.8,79.2c-6.3,10.8-6.3,24.2,0,35
+          l45.8,79.2c6.3,10.8,17.8,17.5,30.3,17.5h91.5c12.5,0,24.1-6.7,30.3-17.5l45.8-79.2c6.3-10.8,6.3-24.2,0-35l-45.8-79.2
+          C855.3,210.3,843.8,203.7,831.3,203.7z"
+          />
+          <text transform="matrix(1 0 0 1 719.007 330.428)" class="st5 st6 st7">
+            Collect the
+          </text>
+          <text
+            transform="matrix(1 0 0 1 731.4494 365.2025)"
+            class="st5 st6 st7"
+          >
+            evidence
+          </text>
+          <g id="Group_136" transform="translate(0.5 19.5)">
+            <path
+              id="Path_17413"
+              class="st9"
+              d="M846.9,237.9c0,9.7-7.9,17.6-17.6,17.6c0,0-90,0.2-89.8,0
+            C828.2,251.1,831.7,254.6,846.9,237.9z"
+            />
+          </g>
+          <g id="Group_160" transform="translate(189.5 -74.5)">
+            <path
+              id="Rectangle_129-3"
+              class="st8"
+              d="M550.5,314.2h89.8c9.7,0,17.6,7.9,17.6,17.6l0,0c0,9.7-7.9,17.6-17.6,17.6h-89.8
+            c-9.7,0-17.6-7.9-17.6-17.6l0,0C532.8,322.1,540.7,314.2,550.5,314.2z"
+            />
+            <path
+              id="Path_17419"
+              class="st9"
+              d="M657.9,331.9c0,9.7-7.9,17.6-17.6,17.6c0,0-90,0.2-89.8,0
+            C639.2,345.1,642.7,348.6,657.9,331.9z"
+            />
+          </g>
+          <g id="Group_158" transform="translate(-5 23)">
+            <text
+              transform="matrix(1 0 0 1 759.3039 242.3836)"
+              class="st10 st11 st12"
+            >
+              Step
+            </text>
+            <text
+              transform="matrix(1 0 0 1 809.384 239.1776)"
+              class="st10 st11 st12"
+            >
+              3
+            </text>
+          </g>
+        </g>
+        <g id="Group_163" transform="translate(-6.5 -4)" class="st1">
+          <path
+            id="Path_17176"
+            class="st4"
+            d="M831.3,514.3h-91.5c-12.5,0-24.1,6.7-30.3,17.5L663.7,611c-6.3,10.8-6.3,24.2,0,35l45.8,79.2
+          c6.3,10.8,17.8,17.5,30.3,17.5h91.5c12.5,0,24.1-6.7,30.3-17.5l45.8-79.2c6.3-10.8,6.3-24.2,0-35l-45.8-79.2
+          C855.3,520.9,843.8,514.3,831.3,514.3z"
+          />
+          <text
+            transform="matrix(1 0 0 1 745.6974 645.762)"
+            class="st5 st6 st7"
+          >
+            Report
+          </text>
+          <text
+            transform="matrix(1 0 0 1 724.9016 681.0374)"
+            class="st5 st6 st7"
+          >
+            outcomes
+          </text>
+          <path
+            id="Rectangle_132"
+            class="st8"
+            d="M740,552h89.8c9.7,0,17.6,7.9,17.6,17.6l0,0c0,9.7-7.9,17.6-17.6,17.6H740
+          c-9.7,0-17.6-7.9-17.6-17.6l0,0C722.3,559.9,730.2,552,740,552z"
+          />
+          <text
+            transform="matrix(1 0 0 1 755.8205 576.0071)"
+            class="st10 st11 st12"
+          >
+            Step 7
+          </text>
+          <path
+            id="Path_17418"
+            class="st9"
+            d="M847.4,569.6c0,9.7-7.9,17.6-17.6,17.6c0,0-90,0.2-89.8,0
+          C828.7,582.8,832.2,586.3,847.4,569.6z"
+          />
+        </g>
+        <path id="Path_17420" class="st13" d="M307.3,212.7l15,5l-4.8,15" />
+        <path id="Path_17421" class="st13" d="M652,207.7l5.5,14.8l-14.7,5.8" />
+        <path id="Path_17422" class="st13" d="M671.1,463l-14.2-6.8l6.5-14.4" />
+        <path id="Path_17423" class="st14" d="M321.6,504.1l-14.6-6l5.8-14.7" />
+        <path
+          id="Path_17424"
+          class="st15"
+          d="M335.9,690.3l3.7,15.3l-15.3,3.9"
+        />
+        <path
+          id="Path_17425"
+          class="st13"
+          d="M627.7,705.3l15.1,4.5l-4.2,15.2"
+        />
+      </g>
+      <g id="Layer_2">
+        <g id="Group_167_1_">
+          <ellipse
+            id="Ellipse_27_1_"
+            class="st2"
+            cx="483.4"
+            cy="463"
+            rx="372.8"
+            ry="372"
+          />
+        </g>
+        <path
+          id="Path_17161_1_"
+          class="st16"
+          d="M220.9,326.7c0-92.4,177.6-146.1,266.7-146.1S756,240,756,337.9s-85.4,135.9-268.4,135.9
+        S225,523.3,220.9,592.7s173.7,152.5,266.7,152.5S756,682.3,756,603.5"
+        />
+        <path id="Path_17420_1_" class="st17" d="M307.3,212.7l15,5l-4.8,15" />
+        <path
+          id="Path_17421_1_"
+          class="st17"
+          d="M652,207.7l5.5,14.8l-14.7,5.8"
+        />
+        <path
+          id="Path_17422_1_"
+          class="st17"
+          d="M671.1,463l-14.2-6.8l6.5-14.4"
+        />
+        <path
+          id="Path_17423_1_"
+          class="st18"
+          d="M321.6,504.1l-14.6-6l5.8-14.7"
+        />
+        <path
+          id="Path_17424_1_"
+          class="st19"
+          d="M335.9,690.3l3.7,15.3l-15.3,3.9"
+        />
+        <path
+          id="Path_17425_1_"
+          class="st17"
+          d="M627.7,705.3l15.1,4.5l-4.2,15.2"
+        />
+
+        <g id="step1">
+          <path
+            id="Path_17163_2_"
+            class="st8 hexfill"
+            d="M239,213.4h-92.2c-12.6,0-24.2,6.7-30.5,17.6l-46.1,79.9c-6.3,10.9-6.3,24.4,0,35.3
+          l46.1,79.9c6.3,10.9,17.9,17.6,30.5,17.6H239c12.6,0,24.2-6.7,30.5-17.6l46.1-79.9c6.3-10.9,6.3-24.4,0-35.3L269.6,231
+          C263.3,220.1,251.6,213.4,239,213.4z"
+          />
+          <path
+            id="Rectangle_126_2_"
+            class="st9 pill"
+            d="M147,249.5h90.5c9.8,0,17.8,8,17.8,17.8l0,0c0,9.8-8,17.8-17.8,17.8H147
+          c-9.8,0-17.8-8-17.8-17.8l0,0C129.2,257.5,137.2,249.5,147,249.5z"
+          />
+          <path
+            id="Path_17415_1_"
+            class="st9"
+            d="M255.3,267.4c0,9.7-7.9,17.6-17.6,17.6c0,0-90,0.2-89.8,0
+        C236.6,280.6,240.1,284.1,255.3,267.4z"
+          />
+          <path
+            id="Path_17426"
+            class="st9 swoosh"
+            d="M116.2,426.1c6.3,10.9,17.9,17.6,30.5,17.6H239c12.6,0,24.2-6.7,30.5-17.6
+          c0,0,39.5-66.8,46.1-79.9c-30.3,26.4-36.6,66.4-65.3,73.4c-78.5,19.1-163.5-44-151.1-23.7C106,408.5,105.7,407.7,116.2,426.1z"
+          />
+          <g id="Group_165_1_" transform="translate(8 10)">
+            <g id="Group_140_1_" transform="translate(-4 19.5)">
+              <text
+                transform="matrix(1 0 0 1 158.4025 245.0818)"
+                class="st10 st20 st12"
+              >
+                Step 1
+              </text>
+              <text
+                transform="matrix(1 0 0 1 119.2251 310.928)"
+                class="st10 st21 st7 titletext"
+              >
+                Immediate
+              </text>
+              <text
+                transform="matrix(1 0 0 1 142.1538 345.7025)"
+                class="st10 st21 st7 titletext"
+              >
+                actions
+              </text>
+            </g>
+          </g>
+        </g>
+
+        <g id="step2">
+          <path
+            id="Path_17163_1_"
+            class="st8 hexfill"
+            d="M531.7,60.3h-92.2c-12.6,0-24.2,6.7-30.5,17.6l-46.1,79.9c-6.3,10.9-6.3,24.4,0,35.3
+          l46.1,79.9c6.3,10.9,17.9,17.6,30.5,17.6h92.2c12.6,0,24.2-6.7,30.5-17.6l46.1-79.9c6.3-10.9,6.3-24.4,0-35.3l-46.1-79.9
+          C556,67,544.3,60.3,531.7,60.3z"
+          />
+          <path
+            id="Rectangle_126_1_"
+            class="st9 pill"
+            d="M439.7,96h90.5c9.8,0,17.8,8,17.8,17.8l0,0c0,9.8-8,17.8-17.8,17.8h-90.5
+          c-9.8,0-17.8-8-17.8-17.8l0,0C421.9,103.9,429.9,96,439.7,96z"
+          />
+          <path
+            id="Path_17412_1_"
+            class="st9"
+            d="M548,113.8c0,9.7-7.9,17.6-17.6,17.6c0,0-90,0.2-89.8,0C529.3,127,532.8,130.5,548,113.8z"
+          />
+          <path
+            id="Path_17426_1_"
+            class="st9 swoosh"
+            d="M408.9,273c6.3,10.9,17.9,17.6,30.5,17.6h92.3c12.6,0,24.2-6.7,30.5-17.6
+          c0,0,39.5-66.8,46.1-79.9c-30.3,26.4-36.6,66.4-65.3,73.4c-78.5,19.1-163.5-44-151.1-23.7C398.7,255.4,398.3,254.6,408.9,273z"
+          />
+          <text
+            transform="matrix(1 0 0 1 437.1115 182.3963)"
+            class="st10 st21 st7 titletext"
+          >
+            Plan the
+          </text>
+          <text
+            transform="matrix(1 0 0 1 403.8576 217.6707)"
+            class="st10 st21 st7 titletext"
+          >
+            investigation
+          </text>
+          <text
+            transform="matrix(1 0 0 1 454.3273 120.659)"
+            class="st10 st20 st12"
+          >
+            Step 2
+          </text>
+        </g>
+        <g id="step3">
+          <path
+            id="Path_17163_3_"
+            class="st8 hexfill"
+            d="M824.4,213.4h-92.2c-12.6,0-24.2,6.7-30.5,17.6l-46.1,79.9c-6.3,10.9-6.3,24.4,0,35.3
+          l46.1,79.9c6.3,10.9,17.9,17.6,30.5,17.6h92.2c12.6,0,24.2-6.7,30.5-17.6l46.1-79.9c6.3-10.9,6.3-24.4,0-35.3L855,231
+          C848.7,220.1,837,213.4,824.4,213.4z"
+          />
+          <path
+            id="Rectangle_126_3_"
+            class="st9 pill"
+            d="M732.4,249h90.5c9.8,0,17.8,8,17.8,17.8l0,0c0,9.8-8,17.8-17.8,17.8h-90.5
+          c-9.8,0-17.8-8-17.8-17.8l0,0C714.6,257,722.6,249,732.4,249z"
+          />
+          <path
+            id="Path_17426_2_"
+            class="st9 swoosh"
+            d="M701.6,426.1c6.3,10.9,17.9,17.6,30.5,17.6h92.3c12.6,0,24.2-6.7,30.5-17.6
+          c0,0,39.5-66.8,46.1-79.9c-30.3,26.4-36.6,66.4-65.3,73.4c-78.5,19.1-163.5-44-151.1-23.7C691.3,408.5,691,407.7,701.6,426.1z"
+          />
+          <text
+            transform="matrix(1 0 0 1 712.507 340.428)"
+            class="st10 st21 st7 titletext"
+          >
+            Collect the
+          </text>
+          <text
+            transform="matrix(1 0 0 1 724.9494 375.2025)"
+            class="st10 st21 st7 titletext"
+          >
+            evidence
+          </text>
+          <g id="Group_158_1_" transform="translate(-5 23)">
+            <text
+              transform="matrix(1 0 0 1 752.8039 252.3836)"
+              class="st10 st20 st12"
+            >
+              Step
+            </text>
+            <text
+              transform="matrix(1 0 0 1 804.884 252.1776)"
+              class="st10 st20 st12"
+            >
+              3
+            </text>
+          </g>
+        </g>
+        <g id="step7">
+          <path
+            id="Path_17163_5_"
+            class="st8 hexfill"
+            d="M824.4,509.4h-92.2c-12.6,0-24.2,6.7-30.5,17.6l-46.1,79.9c-6.3,10.9-6.3,24.4,0,35.3
+          l46.1,79.9c6.3,10.9,17.9,17.6,30.5,17.6h92.2c12.6,0,24.2-6.7,30.5-17.6l46.1-79.9c6.3-10.9,6.3-24.4,0-35.3L855,527
+          C848.7,516.1,837,509.4,824.4,509.4z"
+          />
+          <path
+            id="Rectangle_126_5_"
+            class="st9 pill"
+            d="M732.5,547.8H823c9.8,0,17.8,8,17.8,17.8l0,0c0,9.8-8,17.8-17.8,17.8h-90.5
+          c-9.8,0-17.8-8-17.8-17.8l0,0C714.7,555.8,722.6,547.8,732.5,547.8z"
+          />
+          <path
+            id="Path_17426_4_"
+            class="st9"
+            d="M701.6,722c6.3,10.9,17.9,17.6,30.5,17.6h92.3c12.6,0,24.2-6.7,30.5-17.6
+        c0,0,39.5-66.8,46.1-79.9c-30.3,26.4-36.6,66.4-65.3,73.4c-78.5,19.1-163.5-44-151.1-23.7C691.3,704.4,691,703.7,701.6,722z"
+          />
+          <text
+            transform="matrix(1 0 0 1 739.1974 641.762)"
+            class="st10 st21 st7 titletext"
+          >
+            Report
+          </text>
+          <text
+            transform="matrix(1 0 0 1 718.4016 677.0374)"
+            class="st10 st21 st7 titletext"
+          >
+            outcomes
+          </text>
+          <text
+            transform="matrix(1 0 0 1 749.3205 572.0071)"
+            class="st10 st20 st12"
+          >
+            Step 7
+          </text>
+        </g>
+        <g id="step6">
+          <path
+            id="Path_17163_6_"
+            class="st8 hexfill"
+            d="M532.1,654.5h-92.2c-12.6,0-24.2,6.7-30.5,17.6L363.2,752c-6.3,10.9-6.3,24.4,0,35.3
+          l46.1,79.9c6.3,10.9,17.9,17.6,30.5,17.6h92.2c12.6,0,24.2-6.7,30.5-17.6l46.1-79.9c6.3-10.9,6.3-24.4,0-35.3l-46.1-79.9
+          C556.4,661.2,544.7,654.5,532.1,654.5z"
+          />
+          <path
+            id="Rectangle_126_6_"
+            class="st9 pill"
+            d="M440.1,695.4h90.5c9.8,0,17.8,8,17.8,17.8l0,0c0,9.8-8,17.8-17.8,17.8h-90.5
+          c-9.8,0-17.8-8-17.8-17.8l0,0C422.3,703.4,430.3,695.4,440.1,695.4z"
+          />
+          <path
+            id="Path_17426_5_"
+            class="st9"
+            d="M408.9,867.2c6.3,10.9,17.9,17.6,30.5,17.6h92.3c12.6,0,24.2-6.7,30.5-17.6
+        c0,0,39.5-66.8,46.1-79.9c-30.3,26.4-36.6,66.4-65.3,73.4c-78.5,19.1-163.5-44-151.1-23.7C398.7,849.6,398.3,848.8,408.9,867.2z"
+          />
+          <text
+            transform="matrix(1 0 0 1 407.5319 789.265)"
+            class="st10 st21 st7 titletext"
+          >
+            Recommend
+          </text>
+          <text
+            transform="matrix(1 0 0 1 427.5261 823.5384)"
+            class="st10 st21 st7 titletext"
+          >
+            solutions
+          </text>
+          <text
+            transform="matrix(1 0 0 1 455.717 720.3196)"
+            class="st10 st20 st12"
+          >
+            Step 6
+          </text>
+        </g>
+        <g id="step5">
+          <path
+            id="Path_17163_7_"
+            class="st8 hexfill"
+            d="M239,509.4h-92.2c-12.6,0-24.2,6.7-30.5,17.6l-46.1,79.9c-6.3,10.9-6.3,24.4,0,35.3
+        l46.1,79.9c6.3,10.9,17.9,17.6,30.5,17.6H239c12.6,0,24.2-6.7,30.5-17.6l46.1-79.9c6.3-10.9,6.3-24.4,0-35.3L269.6,527
+        C263.3,516.1,251.6,509.4,239,509.4z"
+          />
+          <path
+            id="Rectangle_126_7_"
+            class="st9 pill"
+            d="M147,547.9h90.5c9.8,0,17.8,8,17.8,17.8l0,0c0,9.8-8,17.8-17.8,17.8H147
+        c-9.8,0-17.8-8-17.8-17.8l0,0C129.2,555.9,137.2,547.9,147,547.9z"
+          />
+          <path
+            id="Path_17426_6_"
+            class="st9 swoosh"
+            d="M116.2,722c6.3,10.9,17.9,17.6,30.5,17.6H239c12.6,0,24.2-6.7,30.5-17.6
+          c0,0,39.5-66.8,46.1-79.9c-30.3,26.4-36.6,66.4-65.3,73.4c-78.5,19.1-163.5-44-151.1-23.7C106,704.4,105.7,703.7,116.2,722z"
+          />
+
+          <text
+            transform="matrix(1 0 0 1 116.3051 636.1507)"
+            class="st10 st21 st7 titletext"
+          >
+            Analyse the
+          </text>
+          <text
+            transform="matrix(1 0 0 1 116.6577 671.4261)"
+            class="st10 st21 st7 titletext"
+          >
+            information
+          </text>
+          <text
+            transform="matrix(1 0 0 1 161.426 572.8099)"
+            class="st10 st20 st12"
+          >
+            Step 5
+          </text>
+        </g>
+
+        <g id="step4">
+          <path
+            id="Path_17163_4_"
+            class="st8 hexfill"
+            d="M531.7,357.8h-92.2c-12.6,0-24.2,6.7-30.5,17.6l-46.1,79.9c-6.3,10.9-6.3,24.4,0,35.3
+          l46.1,79.9c6.3,10.9,17.9,17.6,30.5,17.6h92.2c12.6,0,24.2-6.7,30.5-17.6l46.1-79.9c6.3-10.9,6.3-24.4,0-35.3l-46.1-79.9
+          C556,364.6,544.3,357.8,531.7,357.8z"
+          />
+          <path
+            id="Rectangle_126_4_"
+            class="st9 pill"
+            d="M439.7,395.6h90.5c9.8,0,17.8,8,17.8,17.8l0,0c0,9.8-8,17.8-17.8,17.8h-90.5
+          c-9.8,0-17.8-8-17.8-17.8l0,0C421.9,403.6,429.9,395.6,439.7,395.6z"
+          />
+          <path
+            id="Path_17426_3_"
+            class="st9 swoosh"
+            d="M408.9,570.5c6.3,10.9,17.9,17.6,30.5,17.6h92.3c12.6,0,24.2-6.7,30.5-17.6
+          c0,0,39.5-66.8,46.1-79.9c-30.3,26.4-36.6,66.4-65.3,73.4c-78.5,19.1-163.5-44-151.1-23.7C398.7,552.9,398.3,552.2,408.9,570.5z"
+          />
+          <text
+            transform="matrix(1 0 0 1 403.9929 484.2269)"
+            class="st10 st21 st7 titletext"
+          >
+            Organise the
+          </text>
+          <text
+            transform="matrix(1 0 0 1 412.2819 519.5013)"
+            class="st10 st21 st7 titletext"
+          >
+            information
+          </text>
+          <text
+            transform="matrix(1 0 0 1 454.9846 418.8865)"
+            class="st10 st20 st12"
+          >
+            Step 4
+          </text>
+        </g>
+
+        <path
+          id="Path_17163_14_"
+          class="st8"
+          d="M239,509.4c12.6,0,24.2,6.7,30.5,17.6l46.1,79.9c6.3,10.9,6.3,24.4,0,35.3L269.6,722
+        c-6.3,10.9-17.9,17.6-30.5,17.6h-92.2c-12.6,0-24.2-6.7-30.5-17.6l-46.1-79.9c-6.3-10.9-6.3-24.4,0-35.3l46.1-79.9
+        c6.3-10.9,17.9-17.6,30.5-17.6H239 M239,507.4h-92.2c-13.3,0-25.6,7.1-32.3,18.6l-46.1,79.9c-6.6,11.5-6.6,25.8,0,37.3l46.1,79.9
+        c6.6,11.5,19,18.6,32.3,18.6H239c13.3,0,25.6-7.1,32.3-18.6l46.1-79.9c6.6-11.5,6.6-25.8,0-37.3L271.3,526
+        C264.7,514.5,252.3,507.4,239,507.4L239,507.4z"
+        />
+        <path
+          id="Path_17163_13_"
+          class="st8"
+          d="M239,213.4c12.6,0,24.2,6.7,30.5,17.6l46.1,79.9c6.3,10.9,6.3,24.4,0,35.3l-46.1,79.9
+        c-6.3,10.9-17.9,17.6-30.5,17.6h-92.2c-12.6,0-24.2-6.7-30.5-17.6l-46.1-79.9c-6.3-10.9-6.3-24.4,0-35.3l46.1-79.9
+        c6.3-10.9,17.9-17.6,30.5-17.6H239 M239,211.4h-92.2c-13.3,0-25.6,7.1-32.3,18.6l-46.1,79.9c-6.6,11.5-6.6,25.8,0,37.3l46.1,79.9
+        c6.6,11.5,19,18.6,32.3,18.6H239c13.3,0,25.6-7.1,32.3-18.6l46.1-79.9c6.6-11.5,6.6-25.8,0-37.3L271.3,230
+        C264.7,218.5,252.3,211.4,239,211.4L239,211.4z"
+        />
+        <path
+          id="Path_17163_12_"
+          class="st8"
+          d="M531.7,60.3c12.6,0,24.2,6.7,30.5,17.6l46.1,79.9c6.3,10.9,6.3,24.4,0,35.3L562.3,273
+        c-6.3,10.9-17.9,17.6-30.5,17.6h-92.2c-12.6,0-24.2-6.7-30.5-17.6l-46.1-79.9c-6.3-10.9-6.3-24.4,0-35.3l46.1-79.9
+        c6.3-10.9,17.9-17.6,30.5-17.6H531.7 M531.7,58.3h-92.2c-13.3,0-25.6,7.1-32.3,18.6l-46.1,79.9c-6.6,11.5-6.6,25.8,0,37.3
+        l46.1,79.9c6.6,11.5,19,18.6,32.3,18.6h92.2c13.3,0,25.6-7.1,32.3-18.6l46.1-79.9c6.6-11.5,6.6-25.8,0-37.3L564,76.9
+        C557.4,65.4,545,58.3,531.7,58.3L531.7,58.3z"
+        />
+        <path
+          id="Path_17163_11_"
+          class="st8"
+          d="M824.4,213.4c12.6,0,24.2,6.7,30.5,17.6l46.1,79.9c6.3,10.9,6.3,24.4,0,35.3L855,426.1
+        c-6.3,10.9-17.9,17.6-30.5,17.6h-92.2c-12.6,0-24.2-6.7-30.5-17.6l-46.1-79.9c-6.3-10.9-6.3-24.4,0-35.3l46.1-79.9
+        c6.3-10.9,17.9-17.6,30.5-17.6H824.4 M824.4,211.4h-92.2c-13.3,0-25.6,7.1-32.3,18.6l-46.1,79.9c-6.6,11.5-6.6,25.8,0,37.3
+        l46.1,79.9c6.6,11.5,19,18.6,32.3,18.6h92.2c13.3,0,25.6-7.1,32.3-18.6l46.1-79.9c6.6-11.5,6.6-25.8,0-37.3L856.7,230
+        C850.1,218.5,837.7,211.4,824.4,211.4L824.4,211.4z"
+        />
+        <path
+          id="Path_17163_10_"
+          class="st8"
+          d="M824.4,509.4c12.6,0,24.2,6.7,30.5,17.6l46.1,79.9c6.3,10.9,6.3,24.4,0,35.3L855,722
+        c-6.3,10.9-17.9,17.6-30.5,17.6h-92.2c-12.6,0-24.2-6.7-30.5-17.6l-46.1-79.9c-6.3-10.9-6.3-24.4,0-35.3l46.1-79.9
+        c6.3-10.9,17.9-17.6,30.5-17.6H824.4 M824.4,507.4h-92.2c-13.3,0-25.6,7.1-32.3,18.6l-46.1,79.9c-6.6,11.5-6.6,25.8,0,37.3
+        l46.1,79.9c6.6,11.5,19,18.6,32.3,18.6h92.2c13.3,0,25.6-7.1,32.3-18.6l46.1-79.9c6.6-11.5,6.6-25.8,0-37.3L856.7,526
+        C850.1,514.5,837.7,507.4,824.4,507.4L824.4,507.4z"
+        />
+        <path
+          id="Path_17163_9_"
+          class="st8"
+          d="M532.1,654.5c12.6,0,24.2,6.7,30.5,17.6l46.1,79.9c6.3,10.9,6.3,24.4,0,35.3l-46.1,79.9
+        c-6.3,10.9-17.9,17.6-30.5,17.6h-92.2c-12.6,0-24.2-6.7-30.5-17.6l-46.1-79.9c-6.3-10.9-6.3-24.4,0-35.3l46.1-79.9
+        c6.3-10.9,17.9-17.6,30.5-17.6H532.1 M532.1,652.5h-92.2c-13.3,0-25.6,7.1-32.3,18.6L361.5,751c-6.6,11.5-6.6,25.8,0,37.3
+        l46.1,79.9c6.6,11.5,19,18.6,32.3,18.6h92.2c13.3,0,25.6-7.1,32.3-18.6l46.1-79.9c6.6-11.5,6.6-25.8,0-37.3l-46.1-79.9
+        C557.8,659.6,545.4,652.5,532.1,652.5L532.1,652.5z"
+        />
+        <path
+          id="Path_17163_8_"
+          class="st8"
+          d="M531.7,357.8c12.6,0,24.2,6.7,30.5,17.6l46.1,79.9c6.3,10.9,6.3,24.4,0,35.3l-46.1,79.9
+        c-6.3,10.9-17.9,17.6-30.5,17.6h-92.2c-12.6,0-24.2-6.7-30.5-17.6l-46.1-79.9c-6.3-10.9-6.3-24.4,0-35.3l46.1-79.9
+        c6.3-10.9,17.9-17.6,30.5-17.6H531.7 M531.7,355.8h-92.2c-13.3,0-25.6,7.1-32.3,18.6l-46.1,79.9c-6.6,11.5-6.6,25.8,0,37.3
+        l46.1,79.9c6.6,11.5,19,18.6,32.3,18.6h92.2c13.3,0,25.6-7.1,32.3-18.6l46.1-79.9c6.6-11.5,6.6-25.8,0-37.3L564,374.5
+        C557.4,363,545,355.8,531.7,355.8L531.7,355.8z"
+        />
+
+        <path
+          id="Path_17412-2_1_"
+          class="st9"
+          d="M548,413.5c0,9.7-7.9,17.6-17.6,17.6c0,0-90,0.2-89.8,0
+        C529.3,426.7,532.8,430.2,548,413.5z"
+        />
+        <path
+          id="Path_17416_1_"
+          class="st9"
+          d="M255.3,565.8c0,9.7-7.9,17.6-17.6,17.6c0,0-90,0.2-89.8,0
+        C236.6,579,240.1,582.5,255.3,565.8z"
+        />
+        <path
+          id="Path_17417_1_"
+          class="st9"
+          d="M548.4,713.2c0,9.7-7.9,17.6-17.6,17.6c0,0-90,0.2-89.8,0
+        C529.7,726.5,533.2,729.9,548.4,713.2z"
+        />
+        <path
+          id="Path_17419_1_"
+          class="st9"
+          d="M840.7,266.9c0,9.7-7.9,17.6-17.6,17.6c0,0-90,0.2-89.8,0
+        C822,280.1,825.5,283.6,840.7,266.9z"
+        />
+        <path
+          id="Path_17418_1_"
+          class="st9"
+          d="M840.7,565.7c0,9.7-7.9,17.6-17.6,17.6c0,0-90,0.2-89.8,0
+        C822,578.9,825.6,582.4,840.7,565.7z"
+        />
+      </g>
+    </svg>
+  </div>
+</div>
